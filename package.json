@@ -1,0 +1,24 @@
+{
+  "name": "project1",
+  "version": "0.1.0",
+  "description": "hipster invader game",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tgollaher/hipster-invaders.git"
+  },
+  "author": "Trevor G",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tgollaher/hipster-invaders/issues"
+  },
+  "homepage": "https://github.com/tgollaher/hipster-invaders#readme",
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.2.0",
+    "eslint-plugin-import": "^2.18.0"
+  }
+}
