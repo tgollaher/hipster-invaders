@@ -28,8 +28,6 @@
     height: 90px;
     width: 90px;
     position: absolute;
-    top: 150px;
-    left: 625px;
 
 
 }
@@ -45,6 +43,13 @@
     height: 30px;
     width: 30px;
     position: absolute;
+}
+
+#hipsters {
+    height: 800px;
+    width: 1424px;
+    position: absolute;
+
 }
 
 
