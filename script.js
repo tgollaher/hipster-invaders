@@ -24,6 +24,8 @@ let hipsters = [
 
 ];
 
+// style.top + 90
+
 function isCartmanInDiv() { 
     if(cartman.left < 10 || cartman.left > 1335) {
         alert("Don't runaway from South Park!")
@@ -43,7 +45,7 @@ document.onkeydown = function(e) {
         if (isCartmanInDiv(cartman.left - 1)) {
         cartman.left -= 10;
             moveCartman();
-            // isCartmanInDiv();
+            
         }
         
     }
@@ -52,7 +54,7 @@ document.onkeydown = function(e) {
         if (isCartmanInDiv(cartman.left + 1)) {
             cartman.left +=  10;
             moveCartman(); 
-            // isCartmanInDiv();
+            
         }
     }
     else if (e.keyCode === 32) {
@@ -105,6 +107,9 @@ function moveHipsters() {
 
 
 function collisionDetection() {
+
+
+
     for(let hipster = 0; hipster < hipsters.length; hipster++) {
         for(let hotdog = 0; hotdog < hotdogs.length; hotdog++) {
             if(
@@ -115,7 +120,11 @@ function collisionDetection() {
             ){
                 hipsters.splice(hipster, 1);
                 hotdogs.splice(hotdog, 1);
-                checkForWinner()
+                if(hipsters.length === 0){
+                    return setTimeout(function(){ alert('You win and have saved South Park from invasion!'); }, 1000);
+
+                }
+                
                 
                 
             }
@@ -127,11 +136,7 @@ function collisionDetection() {
 
 }
 
-function checkForWinner(){
-    if(document.querySelectorAll('div.hipster').length === 0){
-      alert('You win and have saved South Park from invasion!')
-    }
-  }
+
 
 
 function gameLoop() {
@@ -144,12 +149,14 @@ function gameLoop() {
 }
 gameLoop();
 
-//if cartman is at the border do not allow to move left of 1440 px 
+
+
+//alert if you destory all hipsters you win! setinterval
+
 
 
 //make characters explode
 //make if characters hit cartman alert you lose!
-//alert if you destory all hipsters you win!
-//make cartman stay on screen
-//landing page html and css
+//bonus score
+
 //write readme
