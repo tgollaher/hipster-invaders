@@ -1,6 +1,4 @@
-
-
-#background {
+.background {
     background-image: url('imgs/backgroundMain.png');
     background-size: cover;
     height: 800px;
@@ -9,7 +7,8 @@
 
 }
 
-#cartman {
+
+.cartman {
     display: flex;
     align-content: row;
     background-image: url('imgs/hero.png');
@@ -32,7 +31,7 @@
 
 }
 
-#hotdogs {
+.hotdogs {
     height: 800px;
     width: 1424px;
     position: absolute;
@@ -45,11 +44,10 @@
     position: absolute;
 }
 
-#hipsters {
+hipsters {
     height: 800px;
     width: 1424px;
     position: absolute;
 
 }
-
 

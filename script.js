@@ -9,31 +9,51 @@ let hotdogs = [];
 
 let hipsters = [
 
-    {left: 200, top: 110},
     {left: 300, top: 110},
     {left: 400, top: 110},
     {left: 500, top: 110},
     {left: 600, top: 110},
     {left: 700, top: 110},
     {left: 800, top: 110},
-    {left: 900, top: 110},
     {left: 400, top: 200},
     {left: 500, top: 200},
     {left: 600, top: 200},
     {left: 700, top: 200},
-    
+    {left: 550, top: 300},
+
 
 ];
 
-document.onkeydown = function(e) {
-    if (e.keyCode === 37){
-        cartman.left -= 10;
-        moveCartman();
-
+function isCartmanInDiv() { 
+    if(cartman.left < 10 || cartman.left > 1335) {
+        alert("Don't runaway from South Park!")
+        location.reload();
+        return false 
     }
+    return true
+
+}
+    
+
+
+
+document.onkeydown = function(e) {
+    // e.preventDefault();
+    if (e.keyCode === 37){
+        if (isCartmanInDiv(cartman.left - 1)) {
+        cartman.left -= 10;
+            moveCartman();
+            // isCartmanInDiv();
+        }
+        
+    }
+
     else if (e.keyCode === 39) {
-        cartman.left +=  10;
-        moveCartman(); 
+        if (isCartmanInDiv(cartman.left + 1)) {
+            cartman.left +=  10;
+            moveCartman(); 
+            // isCartmanInDiv();
+        }
     }
     else if (e.keyCode === 32) {
         hotdogs.push({
@@ -47,13 +67,13 @@ document.onkeydown = function(e) {
 
 
 function moveCartman() {
-    document.getElementById('cartman').style.left = cartman.left + "px"
+    document.querySelector('.cartman').style.left = cartman.left + "px"
 }
 
 function createHotDogs() {
-    document.getElementById('hotdogs').innerHTML = "";
+    document.querySelector('.hotdogs').innerHTML = "";
     for(let hotdog = 0; hotdog < hotdogs.length; hotdog++) {
-    document.getElementById('hotdogs').innerHTML += `<div class='hotdog' style='left:${hotdogs[hotdog].left}px;
+    document.querySelector('.hotdogs').innerHTML += `<div class='hotdog' style='left:${hotdogs[hotdog].left}px;
     top:${hotdogs[hotdog].top}px;'></div>`;
     }
 }
@@ -66,9 +86,9 @@ function moveHotDogs() {
 }
 
 function createHipsters() {
-     document.getElementById('hipsters').innerHTML = "";
+     document.querySelector('.hipsters').innerHTML = "";
     for(let hipster = 0; hipster < hipsters.length; hipster++) {
-    document.getElementById('hotdogs').innerHTML += `<div class='hipster' style='left:${hipsters[hipster].left}px;
+    document.querySelector('.hipsters').innerHTML += `<div class='hipster' style='left:${hipsters[hipster].left}px;
     top:${hipsters[hipster].top}px;'></div>`;
     }
 
@@ -83,6 +103,7 @@ function moveHipsters() {
 
 }
 
+
 function collisionDetection() {
     for(let hipster = 0; hipster < hipsters.length; hipster++) {
         for(let hotdog = 0; hotdog < hotdogs.length; hotdog++) {
@@ -93,7 +114,10 @@ function collisionDetection() {
                 (hotdogs[hotdog].left <= hipsters[hipster].left + 90)
             ){
                 hipsters.splice(hipster, 1);
-                hotdogs.splice(hotdog, 1)
+                hotdogs.splice(hotdog, 1);
+                checkForWinner()
+                
+                
             }
             
         }
@@ -103,15 +127,29 @@ function collisionDetection() {
 
 }
 
+function checkForWinner(){
+    if(document.querySelectorAll('div.hipster').length === 0){
+      alert('You win and have saved South Park from invasion!')
+    }
+  }
+
+
 function gameLoop() {
-    setTimeout(gameLoop, 40)
+    setTimeout(gameLoop, 70)
     moveHotDogs();
     createHotDogs();
     moveHipsters();
     createHipsters();
     collisionDetection();
-    
 }
 gameLoop();
 
 //if cartman is at the border do not allow to move left of 1440 px 
+
+
+//make characters explode
+//make if characters hit cartman alert you lose!
+//alert if you destory all hipsters you win!
+//make cartman stay on screen
+//landing page html and css
+//write readme
