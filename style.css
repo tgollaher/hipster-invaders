@@ -44,10 +44,17 @@
     position: absolute;
 }
 
-hipsters {
+.hipsters {
     height: 800px;
     width: 1424px;
     position: absolute;
 
 }
 
+/* .hipstersShot {
+    background-position: center;
+    background-image: url(imgs/explosion.png);
+      
+
+}
+ */

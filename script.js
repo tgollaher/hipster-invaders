@@ -24,7 +24,7 @@ let hipsters = [
 
 ];
 
-// style.top + 90
+
 
 function isCartmanInDiv() { 
     if(cartman.left < 10 || cartman.left > 1335) {
@@ -35,9 +35,19 @@ function isCartmanInDiv() {
     return true
 
 }
+
+function areHipstersInDiv() { 
+    for(let hipster = 0; hipster < hipsters.length; hipster++) {
+        if(hipsters[hipster].top > 600){
+            alert("You lose! The hipsters have invaded!")
+            location.reload();
+            
+        }
+
+    }
     
 
-
+    }
 
 document.onkeydown = function(e) {
     // e.preventDefault();
@@ -106,9 +116,8 @@ function moveHipsters() {
 }
 
 
-function collisionDetection() {
 
-
+function hipsterCollisionDetection() {
 
     for(let hipster = 0; hipster < hipsters.length; hipster++) {
         for(let hotdog = 0; hotdog < hotdogs.length; hotdog++) {
@@ -116,14 +125,19 @@ function collisionDetection() {
                 (hotdogs[hotdog].top <= hipsters[hipster].top + 90) &&
                 (hotdogs[hotdog].top >= hipsters[hipster].top) &&
                 (hotdogs[hotdog].left >= hipsters[hipster].left) &&
-                (hotdogs[hotdog].left <= hipsters[hipster].left + 90)
+                (hotdogs[hotdog].left <= hipsters[hipster].left + 90) === true
             ){
                 hipsters.splice(hipster, 1);
                 hotdogs.splice(hotdog, 1);
+                
+                
+                setTimeout(function(){ url(); }, 3000);
                 if(hipsters.length === 0){
                     return setTimeout(function(){ alert('You win and have saved South Park from invasion!'); }, 1000);
 
                 }
+                
+                
                 
                 
                 
@@ -139,13 +153,30 @@ function collisionDetection() {
 
 
 
+
+
+
+
+
+
+
+// function blowUpHipsters() {
+//     //if(hipsterCollisionDetection === true){
+//         return 
+//     }
+// }
+
+
+
+
 function gameLoop() {
     setTimeout(gameLoop, 70)
     moveHotDogs();
     createHotDogs();
     moveHipsters();
     createHipsters();
-    collisionDetection();
+    hipsterCollisionDetection();
+    areHipstersInDiv() 
 }
 gameLoop();
 
