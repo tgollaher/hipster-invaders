@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css?family=Bangers&display=swap');
+
+body {
+	background-image: url('http://4.images.southparkstudios.com/images/shows/south-park/clip-thumbnails/season-13/1302/south-park-s13e02c01-dark-times-16x9.jpg?quality=0.8');
+}
+
+h1 {
+	background-image: url(https://media.giphy.com/media/26BROrSHlmyzzHf3i/giphy.gif);
+	background-size: cover;
+	color: transparent;
+	-webkit-background-clip: text;
+	text-transform: uppercase;
+    font-size: 125px;
+    letter-spacing: 2px;
+    line-height: 1;
+    margin: 50px;
+    font-family: 'Bangers', cursive;
+}
+
+.button {
+	text-decoration: none;
+	padding: 20px 20px;
+	background-color: transparent;
+	border-radius: 20px;
+	color: #FFF;
+	position: absolute;
+	left: 700px;
+	bottom: 300px;
+	font-family: 'Bangers', cursive;
+	font-size: 30px;
+} 
+
+

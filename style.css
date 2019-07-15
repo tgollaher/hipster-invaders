@@ -1,0 +1,68 @@
+
+
+body {
+    margin: 0;
+}
+
+
+.background {
+    background-image: url('imgs/backgroundMain.png');
+    background-size: cover;
+    height: 800px;
+    width: 1424px;
+    
+    
+
+}
+
+
+.cartman {
+    display: flex;
+    align-content: row;
+    background-image: url('imgs/hero.png');
+    height: 90px;
+    width: 90px; 
+    position: absolute;
+    top: 650px;
+    left: 625px;
+    
+}
+
+.hipster {
+    display: flex;
+    align-content: row;
+    background-image: url('imgs/enemy.png');
+    height: 90px;
+    width: 90px;
+    position: absolute;
+
+
+}
+
+.hotdogs {
+    height: 800px;
+    width: 1424px;
+    position: absolute;
+
+}
+.hotdog {
+    background-image: url('imgs/missiles.png');
+    height: 30px;
+    width: 30px;
+    position: absolute;
+}
+
+.hipsters {
+    height: 800px;
+    width: 1424px;
+    position: absolute;
+
+}
+
+.hipsters-shot {
+    background-position: center;
+    background-image: url(imgs/explosion.png);
+      
+
+}
+
