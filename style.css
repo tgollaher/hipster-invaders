@@ -1,8 +1,16 @@
+
+
+body {
+    margin: 0;
+}
+
+
 .background {
     background-image: url('imgs/backgroundMain.png');
     background-size: cover;
     height: 800px;
     width: 1424px;
+    
     
 
 }
@@ -51,7 +59,7 @@
 
 }
 
-.hipstersShot {
+.hipsters-shot {
     background-position: center;
     background-image: url(imgs/explosion.png);
       

@@ -24,6 +24,8 @@ let hipsters = [
 
 ];
 
+const hipsterElements = []
+
 
 function isCartmanInDiv() { 
     if(cartman.left < 10 || cartman.left > 1335) {
@@ -49,7 +51,7 @@ function areHipstersInDiv() {
     }
 
 document.onkeydown = function(e) {
-    // e.preventDefault();
+    e.preventDefault();
     if (e.keyCode === 37){
         if (isCartmanInDiv(cartman.left - 1)) {
         cartman.left -= 10;
@@ -97,12 +99,11 @@ function moveHotDogs() {
 }
 
 function createHipsters() {
-     document.querySelector('.hipsters').innerHTML = "";
-    for(let hipster = 0; hipster < hipsters.length; hipster++) {
-    document.querySelector('.hipsters').innerHTML += `<div class='hipster' style='left:${hipsters[hipster].left}px;
-    top:${hipsters[hipster].top}px;'></div>`;
+    document.querySelector('.hipsters').innerHTML = "";
+    for(let i = 0; i < hipsters.length; i++) { document.querySelector('.hipsters').innerHTML += `<div class='hipster' style='left:${hipsters[i].left}px;
+        top:${hipsters[i].top}px;'></div>`;
     }
-
+    console.log(hipsterElements)
 
 }
 
@@ -114,24 +115,27 @@ function moveHipsters() {
 
 }
 
-
 function hipsterCollisionDetection() {
 
-    for(let hipster = 0; hipster < hipsters.length; hipster++) {
-        for(let hotdog = 0; hotdog < hotdogs.length; hotdog++) {
+    for(let i = 0; i < hipsters.length; i++) {
+        for(let j = 0; j < hotdogs.length; j++) {
             if(
-                (hotdogs[hotdog].top <= hipsters[hipster].top + 90) &&
-                (hotdogs[hotdog].top >= hipsters[hipster].top) &&
-                (hotdogs[hotdog].left >= hipsters[hipster].left) &&
-                (hotdogs[hotdog].left <= hipsters[hipster].left + 90) 
+                (hotdogs[j].top <= hipsters[i].top + 90) &&
+                (hotdogs[j].top >= hipsters[i].top) &&
+                (hotdogs[j].left >= hipsters[i].left) &&
+                (hotdogs[j].left <= hipsters[i].left + 90) 
             ){
-                
-                hipsters.splice(hipster, 1);
-                hotdogs.splice(hotdog, 1);
-                if(hipsters.length === 0){
-                    return setTimeout(function(){ alert('You win and have saved South Park from invasion!'); }, 1000);
+              
 
+                hipsters.splice(i, 1,);
+                hotdogs.splice(j, 1);
+                
+                if(hipsters.length === 0){
+                return setTimeout(function(){ alert('You win and have saved South Park from invasion!'); }, 1000);
+    
                 }
+
+
                 
             }
             
@@ -141,7 +145,6 @@ function hipsterCollisionDetection() {
     
 
 }
-
 
 function gameLoop() {
     setTimeout(gameLoop, 70)
