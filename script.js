@@ -25,7 +25,6 @@ let hipsters = [
 ];
 
 
-
 function isCartmanInDiv() { 
     if(cartman.left < 10 || cartman.left > 1335) {
         alert("Don't runaway from South Park!")
@@ -116,7 +115,6 @@ function moveHipsters() {
 }
 
 
-
 function hipsterCollisionDetection() {
 
     for(let hipster = 0; hipster < hipsters.length; hipster++) {
@@ -125,21 +123,15 @@ function hipsterCollisionDetection() {
                 (hotdogs[hotdog].top <= hipsters[hipster].top + 90) &&
                 (hotdogs[hotdog].top >= hipsters[hipster].top) &&
                 (hotdogs[hotdog].left >= hipsters[hipster].left) &&
-                (hotdogs[hotdog].left <= hipsters[hipster].left + 90) === true
+                (hotdogs[hotdog].left <= hipsters[hipster].left + 90) 
             ){
+                
                 hipsters.splice(hipster, 1);
                 hotdogs.splice(hotdog, 1);
-                
-                
-                setTimeout(function(){ url(); }, 3000);
                 if(hipsters.length === 0){
                     return setTimeout(function(){ alert('You win and have saved South Park from invasion!'); }, 1000);
 
                 }
-                
-                
-                
-                
                 
             }
             
@@ -149,24 +141,6 @@ function hipsterCollisionDetection() {
     
 
 }
-
-
-
-
-
-
-
-
-
-
-
-// function blowUpHipsters() {
-//     //if(hipsterCollisionDetection === true){
-//         return 
-//     }
-// }
-
-
 
 
 function gameLoop() {
@@ -182,12 +156,9 @@ gameLoop();
 
 
 
-//alert if you destory all hipsters you win! setinterval
 
 
 
 //make characters explode
-//make if characters hit cartman alert you lose!
-//bonus score
 
-//write readme
+
