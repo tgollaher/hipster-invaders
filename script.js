@@ -103,7 +103,6 @@ function createHipsters() {
     for(let i = 0; i < hipsters.length; i++) { document.querySelector('.hipsters').innerHTML += `<div class='hipster' style='left:${hipsters[i].left}px;
         top:${hipsters[i].top}px;'></div>`;
     }
-    console.log(hipsterElements)
 
 }
 
@@ -162,6 +161,6 @@ gameLoop();
 
 
 
-//make characters explode
+
 
 
