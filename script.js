@@ -84,7 +84,7 @@ function createHotDogs() {
 
 function moveHotDogs() {
   for (let hotdog = 0; hotdog < hotdogs.length; hotdog++) {
-    hotdogs[hotdog].top -= 5;
+    hotdogs[hotdog].top -= 10;
   }
 }
 
