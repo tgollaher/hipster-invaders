@@ -29,4 +29,4 @@ npm install
 
 
 
-![Screen-shot](./images/duck-hunt-part-1.png)
+![Screen-shot](https://raw.githubusercontent.com/tgollaher/hipster-invaders/master/imgs/ScreenShot-1.png)
