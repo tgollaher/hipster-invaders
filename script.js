@@ -1,4 +1,5 @@
 
+
 const cartman = {
   top: 650,
   left: 625,
@@ -122,7 +123,7 @@ function hipsterCollisionDetection() {
 }
 
 function gameLoop() {
-  setTimeout(gameLoop, 70);
+  setTimeout(gameLoop, 30);
   moveHotDogs();
   createHotDogs();
   moveHipsters();
