@@ -1,7 +1,13 @@
 @import url('https://fonts.googleapis.com/css?family=Bangers&display=swap');
 
 body {
-	background-image: url('http://4.images.southparkstudios.com/images/shows/south-park/clip-thumbnails/season-13/1302/south-park-s13e02c01-dark-times-16x9.jpg?quality=0.8');
+    /* Replace the broken external link with the path to your new PNG file: */
+    background-image: url('./imgs/d2p3xzm-c5ae3650-6826-496b-bf57-1db45d905f52.png'); 
+    
+    /* Also add these for proper background behavior: */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
 }
 
 h1 {
